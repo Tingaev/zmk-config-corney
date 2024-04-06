@@ -1,93 +1,11 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-// Layers
 
-#define MAC 4
-#define MAC_CODE 5
-#define MAC_NUM 6
-#define MAC_FUNC 7
-#define WIN 0
-#define WIN_CODE 1
-#define WIN_NUM 2
-#define WIN_FUNC 3
+#define DEFAULT 0
 
-// Behavior Overrides
-
-&lt {
-    tapping-term-ms = <200>;
-    flavor = "hold-preferred";
-};
 
 / {
-    //combos {
-    //  compatible = "zmk,combos";
-    //combo_tab {
-    //  timeout-ms = <20>;
-    //  key-positions = <1 2>;
-    //  bindings = <&kp TAB>;
-    //};
-    //  combo_enter {
-    //    timeout-ms = <20>;
-    //  key-positions = <13 14>;
-    //bindings = <&kp ENTER>;
-    //};
-    //};
-
-    macros {
-        // Emoji
-    };
-
-    behaviors {
-        td_multi_mac: tap_dance_multi_mac {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MULTI_MAC";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp ESC>, <&spotlight>, <&mac_emoji>;
-        };
-
-        td_multi_windows: tap_dance_multi_windows {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MULTI_WINDOWS";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp ESC>, <&kp LGUI>, <&win_emoji>;
-        };
-
-        bm: bottom_row_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BOTTOM_ROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <135>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        cm: code_row_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "CODE_ROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-
-            retro-tap;
-        };
-
-        sm: space_mod {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SPACE_MOD";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
