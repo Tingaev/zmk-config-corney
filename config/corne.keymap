@@ -21,6 +21,11 @@
             timeout-ms = <300>;
             require-prior-idle-ms = <200>;
         };
+
+        BT_settings {
+            bindings = <&to 3>;
+            key-positions = <0 24>;
+        };
     };
 
     keymap {
