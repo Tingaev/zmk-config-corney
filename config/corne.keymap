@@ -33,6 +33,12 @@
             layers = <0>;
             timeout-ms = <50>;
         };
+
+        macos_screenshot {
+            bindings = <&macos_screenshot>;
+            key-positions = <27 26>;
+            timeout-ms = <50>;
+        };
     };
 
     macros {
